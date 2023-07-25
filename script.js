@@ -4,10 +4,11 @@ window.addEventListener("load",function(){
     response.json().then(function(data){
         console.log(data);
         const div = document.getElementById("container");
-        div.textContent = `We have ${data.length} astronauts`;
+         div.textContent = `We have ${data.length} astronauts`;
          data.sort(function (a,b) {
           return b.hoursInSpace - a.hoursInSpace;
         });
+        
         for(let i=0; i<data.length; i++){
          
           let activeClass = data[i].active ? 'active' : '';
@@ -23,7 +24,7 @@ window.addEventListener("load",function(){
         </ul>
         </div>
         
-        <img src=${data[i].picture} width="10%"></img>
+        <img class="avatar" src=${data[i].picture}></img>
         </div>`
         }
     });
